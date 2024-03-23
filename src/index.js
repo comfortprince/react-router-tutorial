@@ -20,6 +20,10 @@ import EditContact , {
 	action as editAction
 } from "./routes/edit"
 
+import {
+	action as destroyAction
+} from "./routes/destroy"
+
 import ErrorPage from "./error-page";
 
 const router = createBrowserRouter([
@@ -40,7 +44,11 @@ const router = createBrowserRouter([
 				element: <EditContact />,
 				action: editAction,
 				loader: contactLoader,
-			}
+			},
+			{
+				path: '/contacts/:contactId/destroy',
+				action: destroyAction,
+			},
 		]
 	}
 ])
